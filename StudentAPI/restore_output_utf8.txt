@@ -1,0 +1,53 @@
+﻿Build started 31-03-2026 12:39:37.
+     1>Project "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" on node 1 (Restore target(s)).
+     1>_GetAllRestoreProjectPathItems:
+         Determining projects to restore...
+     1>Project "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (1) is building "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (1:5) on node 1 (_GenerateRestoreGraphProjectEntry target(s)).
+     1>C:\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj]
+     1>Done Building Project "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (_GenerateRestoreGraphProjectEntry target(s)).
+     1>C:\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj]
+     1>Restore:
+         X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+         X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+         Restoring packages for C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj...
+           CACHE https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.openapi/index.json
+     1>C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj : warning NU1603: StudentAPI depends on Microsoft.AspNetCore.OpenApi (>= 6.0.25) but Microsoft.AspNetCore.OpenApi 6.0.25 was not found. Microsoft.AspNetCore.OpenApi 7.0.0 was resolved instead.
+           CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+           CACHE https://api.nuget.org/v3-vulnerabilities/2026.03.28.05.58.21/vulnerability.base.json
+           CACHE https://api.nuget.org/v3-vulnerabilities/2026.03.28.05.58.21/2026.03.31.05.58.31/vulnerability.update.json
+     1>C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj : error NU1202: Package Microsoft.AspNetCore.OpenApi 7.0.0 is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Package Microsoft.AspNetCore.OpenApi 7.0.0 supports: net7.0 (.NETCoreApp,Version=v7.0)
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\obj\project.assets.json
+         Failed to restore C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj (in 904 ms).
+         
+         NuGet Config files used:
+             C:\Users\viji\AppData\Roaming\NuGet\NuGet.Config
+         
+         Feeds used:
+             https://api.nuget.org/v3/index.json
+     1>Done Building Project "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (Restore target(s)) -- FAILED.
+
+Build FAILED.
+
+       "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (Restore target) (1) ->
+       "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (_GenerateRestoreGraphProjectEntry target) (1:5) ->
+       (_CheckForEolTargetFrameworks target) -> 
+         C:\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj]
+
+
+       "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (Restore target) (1) ->
+         C:\Program Files\dotnet\sdk\10.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: The target framework 'net6.0' is out of support and will not receive security updates in the future. Please refer to https://aka.ms/dotnet-core-support for more information about the support policy. [C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj]
+
+
+       "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (Restore target) (1) ->
+       (Restore target) -> 
+         C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj : warning NU1603: StudentAPI depends on Microsoft.AspNetCore.OpenApi (>= 6.0.25) but Microsoft.AspNetCore.OpenApi 6.0.25 was not found. Microsoft.AspNetCore.OpenApi 7.0.0 was resolved instead.
+
+
+       "C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj" (Restore target) (1) ->
+       (Restore target) -> 
+         C:\Users\viji\OneDrive\Desktop\student management\StudentAPI\StudentAPI.csproj : error NU1202: Package Microsoft.AspNetCore.OpenApi 7.0.0 is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Package Microsoft.AspNetCore.OpenApi 7.0.0 supports: net7.0 (.NETCoreApp,Version=v7.0)
+
+    3 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.39

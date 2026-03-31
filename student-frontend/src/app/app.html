@@ -1,0 +1,17 @@
+<nav class="glass shadow-sm" style="position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border);">
+  <div class="container flex justify-between" style="padding-top: 1rem; padding-bottom: 1rem;">
+    <div class="flex gap-2" style="cursor: pointer;" routerLink="/">
+      <div style="background: var(--primary); color: white; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold;">E</div>
+      <span style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em;">Ezovion <span style="font-weight: 400; color: var(--text-muted);">Student Mgmt</span></span>
+    </div>
+    <div class="flex gap-2">
+      <button class="btn btn-secondary" routerLink="/">List</button>
+      <button class="btn btn-primary" routerLink="/add">+ Add Student</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+

@@ -1,0 +1,123 @@
+<div class="form-container">
+  <div class="mb-4">
+    <button class="btn btn-secondary" (click)="cancel()">← Back to List</button>
+  </div>
+
+  <div class="card">
+    <div class="card-header mb-4">
+      <h2 class="m-0">{{ isEdit ? 'Edit Student' : 'Add New Student' }}</h2>
+      <p class="text-muted">Enter the student's details below. All fields marked with * are required.</p>
+    </div>
+
+    <div *ngIf="loading" class="flex flex-column align-center py-8">
+      <div class="spinner mb-2"></div>
+      <p class="text-muted">Loading student data...</p>
+    </div>
+
+    <div *ngIf="error" class="alert danger mb-4">
+      {{ error }}
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!loading">
+      <div class="grid">
+        <!-- Personal Section -->
+        <div class="col-12 mt-4">
+          <h3 class="section-title">Personal Information</h3>
+        </div>
+
+        <div class="form-group col-md-6" *ngIf="isEdit">
+          <label class="form-label">Student ID</label>
+          <input type="text" class="form-control" formControlName="id" readonly style="background: #f1f5f9;">
+        </div>
+
+        <div class="form-group" [class.col-md-6]="isEdit" [class.col-12]="!isEdit">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-control" formControlName="name" placeholder="e.g. Siva Rama">
+          <div *ngIf="f['name'].touched && f['name'].invalid" class="error-msg">
+            <span *ngIf="f['name'].errors?.['required']">Name is required.</span>
+            <span *ngIf="f['name'].errors?.['pattern']">Alphabets only.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="form-label">Date of Birth *</label>
+          <input type="date" class="form-control" formControlName="dob" [max]="maxDate">
+          <div *ngIf="f['dob'].touched && f['dob'].invalid" class="error-msg">
+            <span *ngIf="f['dob'].errors?.['required']">DOB is required.</span>
+            <span *ngIf="f['dob'].errors?.['futureDate']">Future dates not allowed.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="abc@gmail.com">
+          <div *ngIf="f['email'].touched && f['email'].invalid" class="error-msg">
+            <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+            <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label class="form-label">Mobile Number *</label>
+          <input type="text" class="form-control" formControlName="mobile" placeholder="10-digit number">
+          <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="error-msg">
+            <span *ngIf="f['mobile'].errors?.['required']">Mobile is required.</span>
+            <span *ngIf="f['mobile'].errors?.['pattern']">Must be 10 digits.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-12">
+          <label class="form-label">Address</label>
+          <textarea class="form-control" formControlName="address" rows="2" placeholder="Full address (optional)"></textarea>
+        </div>
+
+        <!-- Academic Info Section -->
+        <div class="col-12 mt-4">
+          <h3 class="section-title">Academic Details</h3>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="form-label">Course *</label>
+          <input type="text" class="form-control" formControlName="course" placeholder="e.g. B.Tech">
+          <div *ngIf="f['course'].touched && f['course'].invalid" class="error-msg">
+            <span *ngIf="f['course'].errors?.['required']">Course is required.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="form-label">Graduation Year *</label>
+          <input type="text" class="form-control" formControlName="graduationYear" placeholder="YYYY">
+          <div *ngIf="f['graduationYear'].touched && f['graduationYear'].invalid" class="error-msg">
+            <span *ngIf="f['graduationYear'].errors?.['required']">Year is required.</span>
+            <span *ngIf="f['graduationYear'].errors?.['futureYear']">Past/Current only.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="form-label">Total Marks *</label>
+          <input type="text" class="form-control" formControlName="totalMarks" placeholder="e.g. 450">
+          <div *ngIf="f['totalMarks'].touched && f['totalMarks'].invalid" class="error-msg">
+            <span *ngIf="f['totalMarks'].errors?.['required']">Marks required.</span>
+            <span *ngIf="f['totalMarks'].errors?.['pattern']">Numeric only.</span>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label class="form-label">CGPA *</label>
+          <input type="text" class="form-control" formControlName="cgpa" placeholder="e.g. 8.5">
+          <div *ngIf="f['cgpa'].touched && f['cgpa'].invalid" class="error-msg">
+            <span *ngIf="f['cgpa'].errors?.['required']">CGPA required.</span>
+            <span *ngIf="f['cgpa'].errors?.['pattern']">Numeric/Decimal only.</span>
+          </div>
+        </div>
+
+        <div class="col-12 flex justify-end gap-2 mt-4 pt-4" style="border-top: 1px solid var(--border);">
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="submitting">
+            {{ submitting ? 'Saving...' : (isEdit ? 'Update Student' : 'Save Student') }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
