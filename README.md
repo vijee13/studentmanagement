@@ -57,12 +57,4 @@ A premium full-stack application developed for the Ezovion assignment, featuring
 
 ---
 
-## 📸 Screenshots & Highlights
 
-- **Dashboard**: A clean, tabulated view of all student records with instant action buttons.
-- **Smart Forms**: Real-time error feedback ensures data integrity before submission.
-- **Confirm Deletions**: Prevents accidental data loss with a custom-styled modal.
-
----
-
-*Developed by Antigravity (Powered by Google DeepMind)*
